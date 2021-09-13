@@ -20,13 +20,13 @@ class CustomNet(nn.Module):
         )
 
         self.lins = nn.Sequential(
-            nn.Linear(16224, 8112),
+            nn.Linear(18816, 9408),
             nn.ReLU(inplace=True),
-            nn.Linear(8112, 4056),
+            nn.Linear(9408, 4704),
             nn.ReLU(inplace=True),
         )
         
-        self.classifier = nn.Linear(4056, 3) # jump, duck, nothing
+        self.classifier = nn.Linear(4704, 3) # jump, nothing, duck 
         self.dropout = nn.Dropout(0.15)
 
     def forward(self, x):
